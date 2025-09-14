@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --night-bg: #18181b;
+  --night-surface: #27272a;
+  --night-accent: #40B0A6;      /* teal */
+  --night-highlight: #E66100;   /* orange */
+  --night-text: #ffffff;
+  --night-muted: #d4d4d8;
+  --yellow: #FFC20A;
+  --teal: #40B0A6;
+  --orange: #E66100;
+}
+
+/* Ensure border-box for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and set base font */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* Set a comfortable line height and background */
+body {
+  background-color: var(--night-bg);
+  color: var(--night-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Accessible link and button focus */
+a {
+  color: var(--yellow); /* #FFC20A */
+}
+a:focus, a:hover {
+  color: var(--teal);  /* #40B0A6 */
+  outline: 2px solid var(--yellow);
+}
+
+button, [type="button"], [type="submit"] {
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--night-accent);
+  background: var(--night-accent);   /* teal */
+  color: var(--night-text);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-gray-900;
+}
+
+/* Form elements */
+input, textarea, select {
+  @apply border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-[color:var(--orange)];
+}
+
+/* Selection color */
+::selection {
+  background: var(--orange); /* #E66100 */
+}
+

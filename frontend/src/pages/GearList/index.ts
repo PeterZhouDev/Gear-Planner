@@ -1,0 +1,1 @@
+export { GearListPage } from './GearList';
