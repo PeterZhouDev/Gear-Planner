@@ -1,26 +1,26 @@
-import { useEffect, useState } from 'preact/hooks';
-import { supabase } from '@/shared/api/';
+import { NavLink } from '@/shared/ui/NavLink';
+import { PageContainer } from '@/shared/ui/PageContainer';
 
 export function HomePage() {
-    const [items, setItems] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function fetchItems() {
-            const { data, error } = await supabase.from('gear_items').select('*');
-            console.log('data:', data, 'error:', error); // Add this line
-            if (!error) setItems(data || []);
-            setLoading(false);
-        }
-        fetchItems();
-    }, []);
-
-    if (loading) return <div>Loading...</div>;
-
     return (
-        <div>
-            <h1>Welcome to Gear Plan</h1>
-            <a href="/gear-list">View Gear Items</a>
-        </div>
+        <PageContainer>
+            <h1 className="text-3xl font-bold text-night-accent mb-4">Welcome to Gear Plan</h1>
+            <p className="mb-8 text-night-muted">
+                Gear Plan helps you organize, pack, and share your outdoor gear lists and journals. Start by exploring your gear or building a new pack!
+            </p>
+            <nav aria-label="Main actions" className="mb-6">
+                <ul className="flex flex-col gap-3">
+                    <li><NavLink href="/gear-list">View Gear Items</NavLink></li>
+                    <li><NavLink href="/packbuilder">Pack Builder</NavLink></li>
+                    <li><NavLink href="/journal/create">Create Journal</NavLink></li>
+                </ul>
+            </nav>
+            <nav aria-label="Explore">
+                <ul className="flex flex-col gap-3">
+                    <li><NavLink href="/explore/gear-lists">Explore Gear Lists</NavLink></li>
+                    <li><NavLink href="/explore/journals">Explore Journals</NavLink></li>
+                </ul>
+            </nav>
+        </PageContainer>
     );
 }

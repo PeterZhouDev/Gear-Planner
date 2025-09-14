@@ -1,0 +1,1 @@
+export type { GearItem, GearList } from './gear';
