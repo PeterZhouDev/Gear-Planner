@@ -1,22 +1,32 @@
-# Backend Structure for Ultralight Hiker’s Gear Planner
+# GearPlan Backend
 
-## Folders
+This folder contains SQL schema, seed data, and setup instructions for the GearPlan app using Supabase/Postgres.
 
-- `sql/` – All SQL scripts for tables and policies (one file per entity)
-- `migrations/` – (Optional) For versioned migration scripts
-- `.env` – Environment variables (never commit secrets)
-- `README_CRUD.md` – CRUD and onboarding instructions
-- `README_supabase_setup.md` – Supabase setup guide
+## Setup
 
-## Onboarding Steps
+1. **Create a Supabase project** at [app.supabase.com](https://app.supabase.com).
 
-1. Read `README_supabase_setup.md` to set up your Supabase project.
-2. Use the SQL files in `sql/` to create tables and policies via the Supabase SQL editor.
-3. See `README_CRUD.md` for CRUD usage and integration tips.
-4. Add new SQL files for new entities as the project grows.
+2. **Configure environment variables:**
 
-## Best Practices
+   - Copy `.env.example` to `.env` and fill in your Supabase credentials.
 
-- Keep all schema and policy changes in `sql/` for easy review and onboarding.
-- Document any manual steps in the README files.
-- Use migrations for production projects.
+3. **Create tables:**
+
+   - Use the SQL files in `/sql` to create tables:
+     - `gear_items.sql`
+     - `gear_lists.sql`
+     - `journals.sql`
+     - `comments.sql`
+
+4. **Seed data (optional):**
+   - Run `seed.sql` in the Supabase SQL editor to add sample data.
+
+## Files
+
+- `sql/` — SQL files for schema and seeding
+- `.env.example` — Example environment variables
+
+## More
+
+- See `README_supabase_setup.md` for detailed Supabase setup.
+- See `README_CRUD.md` for CRUD operation examples.

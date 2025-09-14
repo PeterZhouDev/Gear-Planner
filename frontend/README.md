@@ -1,15 +1,52 @@
-# `create-preact`
+## Setup
 
-<h2 align="center">
-  <img height="256" width="256" src="./src/assets/preact.svg">
-</h2>
+1. **Install dependencies:**
 
-<h3 align="center">Get started using Preact and Vite!</h3>
+   ```sh
+   npm install
+   ```
 
-## Getting Started
+2. **Configure environment variables:**
 
--   `npm run dev` - Starts a dev server at http://localhost:5173/
+   - Copy `.env.example` to `.env` and fill in your Supabase project URL and anon key.
 
--   `npm run build` - Builds for production, emitting to `dist/`. Prerenders all found routes in app to static HTML
+3. **Run the app:**
+   ```sh
+   npm run dev
+   ```
+   The app will be available at [http://localhost:5173](http://localhost:5173).
 
--   `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally
+## Features
+
+- Gear list management
+- Journaling
+- Colorblind-friendly, accessible UI
+- Supabase authentication and data
+
+## Project Structure
+
+```
+src/
+  app/        # App entry and routing
+  entities/   # Domain models
+  features/   # Business features
+  pages/      # Route-level pages
+  shared/     # Shared UI, assets, API
+  widgets/    # Page sections
+```
+
+## Styling
+
+- Uses [Tailwind CSS](https://tailwindcss.com/) with a colorblind-friendly palette.
+- See `src/index.css` for custom variables and resets.
+
+## Environment Variables
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+(See `.env.example`)
+
+## License
+
+MIT
